@@ -85,12 +85,12 @@ public class TestHiveDataInsert extends SolrCloudClusterSupport {
       assertEquals(1, solrDocumentList.size());
       SolrDocument solrDocument = solrDocumentList.get(0);
 
-      assertTrue(solrDocument.containsKey("id"));
+      assertTrue(solrDocument.containsKey("_id"));
       assertTrue(solrDocument.containsKey("col1"));
       assertTrue(solrDocument.containsKey("col2"));
       assertTrue(solrDocument.containsKey("col3"));
 
-      assertEquals("id0", solrDocument.get("id"));
+      assertEquals("id0", solrDocument.get("_id"));
       assertEquals(Arrays.asList("abc"), solrDocument.get("col1"));
       assertEquals(Arrays.asList(true), solrDocument.get("col2"));
       assertEquals(Arrays.asList(Long.valueOf(12)), solrDocument.get("col3"));
@@ -123,12 +123,12 @@ public class TestHiveDataInsert extends SolrCloudClusterSupport {
       assertEquals(1, solrDocumentList.size());
       SolrDocument solrDocument = solrDocumentList.get(0);
 
-      assertTrue(solrDocument.containsKey("id"));
+      assertTrue(solrDocument.containsKey("_id"));
       assertTrue(solrDocument.containsKey("col1_s"));
       assertTrue(solrDocument.containsKey("col2_b"));
       assertTrue(solrDocument.containsKey("col3_i"));
 
-      assertEquals("id0", solrDocument.get("id"));
+      assertEquals("id0", solrDocument.get("_id"));
       assertEquals("abc", solrDocument.get("col1_s"));
       assertEquals(true, solrDocument.get("col2_b"));
       assertEquals(12, solrDocument.get("col3_i"));
@@ -156,7 +156,7 @@ public class TestHiveDataInsert extends SolrCloudClusterSupport {
       assertEquals(3, solrDocumentList.size());
 
       for (SolrDocument solrDocument : solrDocumentList) {
-        assertTrue(solrDocument.containsKey("id"));
+        assertTrue(solrDocument.containsKey("_id"));
       }
     } catch (SolrServerException e) {
       throw e;

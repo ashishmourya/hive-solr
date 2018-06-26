@@ -14,7 +14,7 @@ function get_class(name) {
 function processAdd(cmd) {
 
   doc = cmd.solrDoc;  // org.apache.solr.common.SolrInputDocument
-  var id = doc.getFieldValue("id");
+  var id = doc.getFieldValue("_id");
   logger.info("update-script#processAdd: id=" + id);
 
   // The idea here is to use the file's content_type value to

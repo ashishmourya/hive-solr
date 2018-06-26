@@ -1257,7 +1257,7 @@
 
   <!-- Deduplication
 
-       An example dedup update processor that creates the "id" field
+       An example dedup update processor that creates the "_id" field
        on the fly based on the hash code of some other fields.  This
        example has overwriteDupes set to false since we are using the
        id field as the signatureField and Solr will maintain

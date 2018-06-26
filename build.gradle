@@ -72,6 +72,7 @@ subprojects {
 project('solr-hive-core') {
 
   dependencies {
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.9.0'
     compile(project(':solr-hadoop-common:solr-hadoop-io')) {
       transitive = false
     }
